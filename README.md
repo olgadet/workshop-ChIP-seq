@@ -1,3 +1,3 @@
-ChIP-seq data analysis course materials
+ChIP-seq data analysis workshop  materials
 
-Course leaders: Olga Dethlefsen, Agata Smialowska
+Course leaders: Agata Smialowska, Olga Dethlefsen

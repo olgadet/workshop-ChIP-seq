@@ -9,7 +9,7 @@ Contact: [olga.dethlefsen@nbis.se](olga.dethlefsen@gmail.com); 0720 492 082
 
 ----
 
-### Thursday 2017-10-23
+### Wednesday 2018-11-07
 
 Room: Gamma 6, Pascal
 
