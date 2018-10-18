@@ -4,7 +4,7 @@ title:  'ChIP-seq data analysis course'
 ---
 
 # ChIP-seq data analysis course
-Held in SciLifeLab Solna, 2018-11-07 and 2018-11-09
+Held in SciLifeLab Solna, from 2018-11-07 to 2018-11-09
 
 ## Course Links
 [Pre-course material](precourse)   
@@ -31,9 +31,6 @@ Held in SciLifeLab Solna, 2018-11-07 and 2018-11-09
 * [Lab: csaw](labs/csaw)
 * [Lab: deepTools visualisation](labs/vis) (Uppmax)
 -->
-
-
-
 
 ## Address and travel suggestions
 [Travel Info](travel)  

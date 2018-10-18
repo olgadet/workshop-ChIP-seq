@@ -130,15 +130,20 @@ system you are running.
 To install, follow the instructions on the [IGV website](http://software.broadinstitute.org/software/igv/)
 
 
-# Useful things to try before the course
+# Further optional preparations
 For those of you wanting to start ahead and/or brush up on various skills before the course
 
+## Computer skills
 - [Unix](http://www.ee.surrey.ac.uk/Teaching/Unix/): especially the first three chapters. You can practice on Milou or using this [emulator](http://uppnex.se/emu/)
 - [Best first R tutorial](https://www.nceas.ucsb.edu/files/scicomp/Dloads/RProgramming/BestFirstRTutorial.pdf)  
   A nice self learn tutorial to R, introducing many central concepts to R.
 - [A short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)  
   A very short introduction to using R.
+
+## ChIP-seq  
 - [Video introduction to ChIP-seq data analysis](https://www.youtube.com/watch?v=zwuUveGgmS0) by Dr. Carl Hermann, University of Heidelberg
+- [ChIP-seq and beyond: new and improved methodologies to detect and characterize protein-DNA interactions](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3591838/)
+- [Q&A: ChIP-seq technologies and the study of gene regulation](https://bmcbiol.biomedcentral.com/articles/10.1186/1741-7007-8-56)
 
 <!---
 - [DiffBind tutorial](https://bioconductor.org/packages/release/bioc/vignettes/DiffBind/inst/doc/DiffBind.pdf): introduction to Bioconductor package for differential binding that will be used during the course

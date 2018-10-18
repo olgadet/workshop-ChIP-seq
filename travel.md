@@ -5,7 +5,8 @@ title: 'Travel'
 
 # Travel Information
 
-The course is held at SciLifeLab, Tomtebodavägen 23A, 17165 Solna
+The course is held at SciLifeLab, Tomtebodavägen 23A, 17 165 Solna
+Gamma 2, Room: Fire
 
 We are at number 23a on [Karolinska Solna Campus Map](files/karta_campus_solna_16_11_14.pdf)
 

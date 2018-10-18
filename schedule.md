@@ -3,52 +3,87 @@ layout: default
 title:  'Schedule'
 ---
 
-Course is held at SciLifeLab, Tomtebodavagen 23A, 171 65 Solna
-
-Contact: [olga.dethlefsen@nbis.se](olga.dethlefsen@gmail.com); 0720 492 082
+Course is held at SciLifeLab, Gamma 2, Room: Fire
+Tomtebodavagen 23A, 171 65 Solna
 
 ----
 
 ### Wednesday 2018-11-07
 
-Room: Gamma 6, Pascal
+Room: Fire, Gamma 2
 
-**08.45 - 9.00** pre-course coffee
+**08.45 - 09.00** pre-course coffee
 
-**09:00 - 09.30** [Welcome, incl. getting to know each other](lectures/welcome.pdf) (Olga Dethlefsen, Agata Smialowska)
+**09:00 - 09.15** Welcome (Olga, Agata)
 
-**09.30 - 10.30** [Lecture: ChIP-seq data analysis principles](lectures/ChIP-seq_AS_JW.pdf) (Jakub Westholm)
+**09.15 - 10.15** Lecture: ChIP-seq data analysis principles (**Agata**)
 
-**10.30 - 12.00** [Practicals: ChIP-seq data processing](labs/processing) (Olga, Jakub, Verena Kutschera)
+**10.15 - 10.30** Discussion: getting to know each other (Agata, Jakub, **Olga**)
 
-**12.00 - 13.00** _lunch_
+**10.15 - 10.45** Introduction to practicals I: data processing (Agata, Jakub, **Olga**)
 
-**13.00 - 16.15** [Practicals: ChIP-seq data processing](labs/processing) (Olga, Verena, Jakub)
+**10.30 - 12.00** Practicals: ChIP-seq data processing (Agata, Jakub, Olga)
 
-**16.15 - 17.00** Group discussion: ChIP-seq data processing (Olga, Verena)
+**12.00 - 13.30** _lunch_
+
+**13.30 - 17.00** Practicals: ChIP-seq data processing (Agata, Jakub, Olga)
 
 ----
 
-### Friday 2017-10-24
+### Thursday 2018-11-08
+Room: Fire, Gamma 2
 
-Room: Gamma 6, Pascal
+**09:00 - 09.30** Discussion: ChIP-seq data processing (**Agata**, Jakub, Olga)
 
-**09.00 - 09.30** Welcome to day 2 (Olga)
+**09.30 - 10.30** Introduction to practicals II:  
+- differential binding (Olga)
+- functional annotations (Olga)
+- motifs (Jakub)
+- broad peaks (Agata)
 
-**09.30 - 12.00** [Practicals: down-stream analysis](labs/diffBinding) and optional [extras](index) (Olga, Agata, Jakub, Verena)
+**10.30 - 12.00** Practicals: downstream analysis (Agata, Jakub, Olga)
 
-**12.00 - 13.00** _lunch_
+**12.00 - 13.30** _lunch_
 
-**13.00 - 14.00** [Introduction to SciLifeLab NGI ChIP-seq pipeline](lectures/Phil Ewels - NBIS ChIP-seq course.pdf) (Phil Ewels)
+**13.00 - 14.00** Lecture: case study and beyond (all the interesting things) (**Jakub**, Agata)
 
-**14.00 - 15.00** [Practicals: down-stream analysis](labs/diffBinding) and optional [extras](index) (Olga, Agata, Jakub, Verena)
 
-**15.00 - 16.00** Group discussion: what have we learned and what is next (Olga, Agata, Jakub, Verena)
+Parallel session
 
-**16.00 - 17.00** Wrap-up (Olga, Agata, Jakub, Verena)
+**13.30 - 17.10** Practicals: downstream analysis (TA, TA)
+
+**13.30 - 17.00** Discussion: bring your own project (Agata, Jakub, Olga)
+
+----
+
+### Friday 2018-11-09
+Room: Fire, Gamma 2
+
+**09.00 - 10.00** [Introduction to SciLifeLab NGI ChIP-seq pipeline](lectures/Phil Ewels - NBIS ChIP-seq course.pdf) (Phil Ewels)
+
+**10.00 - 10.30** Discussions: downstream analysis
+
+**10.30 - 11.00** Introduction to practicals III
+- exo-spike (Agata)
+- public data resources (Jakub)
+
+**11.00 - 12.00** Practicals: downstream analysis (Agata, Jakub, Olga)
+
+**12.00 - 13.30** _lunch_
+
+**13.30 - 14.30** Practicals: downstream analysis (Agata, Jakub, Olga)
+
+**14.30 - 17.00** Discussion & wrap-up (**Agata**, Jakub, **Olga**)
 
 ----
 
 _coffee and snacks will arrive twice a day_
 
-_lunch will be at [Restaurang Konigs](http://restaurangkonigs.se)_
+_lunch will be at:_
+
+____
+**Teaching team**
+- Olga Dethlefsen, PhD, NBIS, SciLifeLab, University of Stockholm
+- Agata Smialowska, PhD, NBIS, SciLifeLab, University of Stockholm
+- Jakub Westholm, PhD, NBIS, SciLifeLab, University of Stockholm
+- Phil Ewels, PhD, NGI, SciLifeLab, University of Stockholm
