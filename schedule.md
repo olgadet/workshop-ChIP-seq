@@ -22,11 +22,11 @@ Room: Fire, Gamma 2
 
 **10.15 - 10.45** Introduction to practicals I: data processing (Agata, Jakub, **Olga**)
 
-**10.30 - 12.00** [Practicals: ChIP-seq data processing](labs/lab-processing) (Agata, Jakub, Olga, TA)
+**10.30 - 12.00** [Practicals: ChIP-seq data processing](index) (Agata, Jakub, Olga, TA)
 
 **12.00 - 13.30** _lunch_
 
-**13.30 - 17.00** [Practicals: ChIP-seq data processing](labs/lab-processing) (Agata, Jakub, Olga, TA)
+**13.30 - 17.00** [Practicals: ChIP-seq data processing](index) (Agata, Jakub, Olga, TA)
 
 ----
 
@@ -41,7 +41,7 @@ Room: Fire, Gamma 2
 - motifs (Jakub)
 - broad peaks (Agata)
 
-**10.30 - 12.00** Practicals: downstream analysis (Agata, Jakub, Olga, TA)
+**10.30 - 12.00** [Practicals: downstream analysis](index) (Agata, Jakub, Olga, TA)
 
 **12.00 - 13.30** _lunch_
 
@@ -50,7 +50,7 @@ Room: Fire, Gamma 2
 
 Parallel session
 
-**13.30 - 17.10** Practicals: downstream analysis (TA, TA)
+**13.30 - 17.10** [Practicals: downstream analysis](index) (TA, TA)
 
 **13.30 - 17.00** Discussion: bring your own project (Agata, Jakub, Olga)
 
@@ -67,11 +67,11 @@ Room: Fire, Gamma 2
 - exo-spike (Agata)
 - public data resources (Jakub)
 
-**11.00 - 12.00** Practicals: downstream analysis (Agata, Jakub, Olga, TA)
+**11.00 - 12.00** [Practicals: downstream analysis](index) (Agata, Jakub, Olga, TA)
 
 **12.00 - 13.30** _lunch_
 
-**13.30 - 14.30** Practicals: downstream analysis (Agata, Jakub, Olga, TA)
+**13.30 - 14.30** [Practicals: downstream analysis](index) (Agata, Jakub, Olga, TA)
 
 **14.30 - 17.00** Discussion & wrap-up (**Agata**, Jakub, **Olga**)
 

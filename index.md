@@ -15,22 +15,16 @@ Held in SciLifeLab Solna, from 2018-11-07 to 2018-11-09
 
 ## Labs links
 
-*Main*
-* [Lab: ChIP-seq data processing](labs/processing) (Part 1 & 2 Uppmax, Part 3 locally)
-* [Lab: Down-stream analysis](labs/diffBinding)  (Uppmax or locally, recommended locally)
+*ChIP-seq data processing*
+* [Main Lab: ChIP-seq data processing](labs/lab-processing) (Main data processing workflow) [Uppmax & locally]
+* [Extra Lab: ChIPQC](labs/lab-chipqc) (Alternative QC analysis) [Uppmax or locally]
+* [Extra Lab: deepTools visualisation](labs/lab-vis) (Additional signal visualisations with deepTools) [Uppmax]
 
-*Extras* (not extensively tested)
-* [Extra Lab: csaw](labs/csaw) (locally)
-* [Extra Lab: ChIPQC](labs/chipqc) (Uppmax or locally)
-* [Extra Lab: deepTools visualisation](labs/vis) (Uppmax)
+*ChIP-seq downstream analysis*
+* [Main Lab: Down-stream analysis](labs/lab-diffBinding-local) (Main differential binding and functional annotations workflow) [**local version**]
+* [Main Lab: Down-stream analysis](labs/lab-diffBinding-remote) (Main differential binding and functional annotations workflow) [Uppmax version]
+* [Extra Lab: csaw](labs/lab-csaw) (Alternative differential binding analyses) [local version]
 
-<!--
-*Day 2*
-* [Lab: Differential occupancy with DiffBind](labs/diffBinding) + section [6.2 Deriving consensus peaksets](http://bioconductor.org/packages/devel/bioc/vignettes/DiffBind/inst/doc/DiffBind.pdf)
-* [Lab: Down-stream analysis with ChIPpeakAnno](labs/diffBinding) + selected [extras from  ChIPpeakAnno manual](https://bioconductor.org/packages/devel/bioc/vignettes/ChIPpeakAnno/inst/doc/ChIPpeakAnno.html)
-* [Lab: csaw](labs/csaw)
-* [Lab: deepTools visualisation](labs/vis) (Uppmax)
--->
 
 ## Address and travel suggestions
 [Travel Info](travel)  
