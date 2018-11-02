@@ -10,11 +10,6 @@ title:  'ChIP-seq down-stream analysis'
 - annotate differentially bound sites with nearest genes and genomic features with `ChIPpeakAnno`
 - perform functional enrichment analysis to identify predominant biological themes with `ChIPpeakAnno` and `reactome.db`
 
-## Introduction <a name="Introduction"></a>
-Welcome back to the second part of the tutorial. In the first part we have learnt how to access the quality of ChIP-seq data and we how to derive a consensus peakset for downstream analyses.
-
-In this part we will learn how to place our peaks in a biological context, by identifying differentially bound sites between two sample groups and annotating these sites to find out predominant biological themes separating the groups.
-
 ## Content
 - [Introduction](#Introduction)
 - [Data & Methods](#DataMethods)
@@ -30,6 +25,11 @@ In this part we will learn how to place our peaks in a biological context, by id
 
 - [Concluding remarks and next steps](#Next)
 - [Appendix: figures](#Next)
+
+## Introduction <a name="Introduction"></a>
+Welcome back to the second part of the tutorial. In the first part we have learnt how to access the quality of ChIP-seq data and we how to derive a consensus peakset for downstream analyses.
+
+In this part we will learn how to place our peaks in a biological context, by identifying differentially bound sites between two sample groups and annotating these sites to find out predominant biological themes separating the groups.
 
 ## Data & Methods <a name="DataMethods">
 We will continue using the same data as in the first part of the tutorial. Please note that usually **three biological replicates** are the **minimum requirement** for statistical analysis such as in factor occupancy.

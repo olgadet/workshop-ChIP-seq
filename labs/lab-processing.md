@@ -10,6 +10,16 @@ title:  'ChIP-seq data processing tutorial'
 - be able to assess quality of the ChIP-seq libraries with a range of quality metrics
 - work interactively with ChIP-seq signal using Integrative Genome Viewer
 
+## Content
+- [Introduction](#Introduction)
+- [Data](#Data)
+- [Methods](#Methods)
+- [Setting-up](#Setting-up)
+- [Part 1: Quality control and data processing](#QC)
+- [Part 2: Identification of binding sites](#BindingSites)
+- [Part 3: Visualisation of mapped reads, coverage profiles and peaks in a genome browser](#Visualisation)
+- [Summary](#Summary)
+- [Appendix: figures](#Appendix)
 
 ## Introduction <a name="Introduction"></a>
 
@@ -26,17 +36,6 @@ The "Did my ChIP work?" question is impossible to answer by simply counting numb
 In the **third part** we look at the data: mapped reads, coverage profiles and peaks.
 
 **All three parts** come together to be able to assess the quality of the ChIP-seq experiment and are essential before running any down-stream analysis or drawing any biological conclusions from the data.
-
-## Content
-- [Introduction](#Introduction)
-- [Data](#Data)
-- [Methods](#Methods)
-- [Setting-up](#Setting-up)
-- [Part 1: Quality control and data processing](#QC)
-- [Part 2: Identification of binding sites](#BindingSites)
-- [Part 3: Visualisation of mapped reads, coverage profiles and peaks in a genome browser](#Visualisation)
-- [Summary](#Summary)
-- [Appendix: figures](#Appendix)
 
 ## Data <a name="Data"></a>
 
