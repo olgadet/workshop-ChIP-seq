@@ -1,3 +1,8 @@
+---
+layout: default
+title:  'Public data'
+---
+
 # Public ChIP-seq resurces
 
 Aim of this exercise

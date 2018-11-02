@@ -1,3 +1,8 @@
+---
+layout: default
+title:  'Motif finding'
+---
+
 # Motif finding exercise
 
 In this exercise we will bla bla bla..
