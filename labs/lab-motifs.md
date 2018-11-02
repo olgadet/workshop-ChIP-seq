@@ -34,13 +34,13 @@ Note that the programs used in this exercise produce html output. You view these
 ## 1. Download CTCF data
 First, we will look at a ChIP-seq experiment using an antibody against *CTCF*. *CTCF* (CCCTC-binding factor) is a zinc-finger protein that functions as a transcription factor. It also has insulator activity and is important for the 3D structure of chromatin, through formation of chromatin loops.
 
-![CTCF loops](http://dev.biologists.org/content/develop/145/6/dev137729/F2.large.jpg?width=800&height=600&carousel=1 =400x300 "CTCF motif" )
+![CTCF loops](../figures/lab-motifs/F2.large.jpg =400x300)
 
 
 *CTCF* is a well studied protein, and many ChIP-seq data sets are available for CTCF. Its DNA motif is [well known](http://jaspar.genereg.net/matrix/MA0139.1/?revcomp=1) (as you can tell from its name).
 
 
-![CTCF motif](http://jaspar.genereg.net/static/logos/svg/MA0139.1.rc.svg =400x200)
+![CTCF motif](../figures/lab-motifs/MA0139.1.rc.svg =400x200)
 
 
 We will use [this data set](https://www.encodeproject.org/experiments/ENCSR572DUJ/), from ENCODE. This page shows information about this particular experiment, along the experimental protocols and analysis pipelines used. Scroll down a bit and select the tab "File details". Now you will see a list of file available for download. We will use the bed files with "pseudoreplicated idr thresholded peaks". Download this file:
