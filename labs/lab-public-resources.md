@@ -3,7 +3,7 @@ layout: default
 title:  'Public data'
 ---
 
-# Public ChIP-seq resurces
+# Public ChIP-seq resources
 
 Aim of this exercise
 
