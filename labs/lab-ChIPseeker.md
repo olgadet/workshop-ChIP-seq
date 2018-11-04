@@ -43,6 +43,7 @@ library(DiffBind)
 library(ChIPseeker)
 library(ReactomePA)
 library(clusterProfiler)
+library(biomaRt)
 
 library(org.Hs.eg.db)  
 library(TxDb.Hsapiens.UCSC.hg19.knownGene)
@@ -165,7 +166,7 @@ plotAvgProf(tagMatrixList, xlim=c(-3000, 3000))
 
 ```
 
-## Peaks Annotations
+## Peaks Annotations <a name="Annotations"></a>
 **Peak annotations is performed by `annotatePeak` function**. Here, we can define TSS region, by default set to -3kb to 3kb. The output of annotatePeak is `csAnno` object than we can convert to GRanges (with as.GRanges() function) or to data frame (with as data.frame() function).
 
 Similar to annotations with `ChIPpeakAnno` we will need `TxDB` object containing annotations, transcript-related features of a particular genome. We can use Bioconductor packages providing annotations for various model organisms. It may be however **good to know that one can also prepare their own TxDb object** by retrieving information from UCSC or BioMart using `GenomicFeature` package. Here, we will use `TxDb.Hsapiens.UCSC.hg19.knownGene` annotations provided by Bioconductor.
@@ -260,13 +261,99 @@ What do you think?
 - would you expect such distribution of features?
 - do these distributions differ between cell-lines?
 
-## Functional analysis
+## Functional analysis <a name="Functional"></a>
+
+Having obtained annotations to nearest genes, we can perform **functional enrichment analysis to identify predominant biological themes** among these genes by incorporating biological knowledge provided by biological ontologies, incl. GO (Gene Ontology, Ashburner et al. 2000), KEGG (Kyoto Encyclopedia of Genes and Genomes, Kanehisa et al. 2004), DO (Disease Ontology, Schriml et al. 2011) or Reactome (Croft et al. 2013).
+
+Here, we can also use `seq2gene` function for linking genomic regions to genes in a **many-to-many mapping**. This function consider host gene (exon/intron), promoter region and flanking gene from intergenic region that may undergo control via cis-regulation.
+
+One can **build on** using ChIPseeker for functional enrichment and annotation as there are several packages by the same author to identify biological themes, i.e. `ReactomePA` for reactome pathways enrichment, `DOSE` for Disease Ontology, `clusterProfiler` for Gene Ontology and KEGG enrichment analysis. Especially [clustserProfiler](http://bioconductor.org/packages/release/bioc/vignettes/clusterProfiler/inst/doc/clusterProfiler.html)
+ comes handy when **visualising and comparing** biological themes, also when comparing functions derived from other omics technologies for integrative analyses.
+
+Here, we will experiment with few functions only. We will search for enriched reactome pathways using genes annotated to peaks by nearest location and allowing for many-to-many mapping. We will also learn how to compare functional annotations between peak sets using GO terms as an example.
+
+We will start by defying our genes background, i.e. genes on chromosome 1 and 2. For this we can use functions from BioMart
+
+```bash
+
+# Define chromosomes
+chrom=c(1,2)
+
+# Define source
+ensembl=useMart("ensembl")
+ensembl = useDataset("hsapiens_gene_ensembl",mart=ensembl)
+
+# Run query: extracting ENTREZID for genes on chromosome 1 and 2
+genes.chr1chr2 <- getBM(attributes= "entrezgene",
+        filters=c("chromosome_name"),
+        values=list(chrom), mart=ensembl)
+
+# Reformatting output to character string (as required later on by clusterProfiler functions)
+genes.universe <- as.character(as.numeric(as.matrix(genes.chr1chr2)))
+
+```
+
+Reactome pathway enrichment of genes defined as a) nearest feature to the peaks and b) allowing for many-to-many mapping
+```bash
+
+# a: selecting annotated peaks for functional enrichment in object
+data.peaks_ann <- peaks.neural_ann
+
+# a: reactome pathways using chromosome 1 and 2 genes as a background
+pathway.reac1 <- enrichPathway(as.data.frame(data.peaks_ann)$geneId, universe = genes.universe)
+
+# a: preview enriched reactome pathways
+head(pathway.reac1)
+
+
+# b: selecting peaks
+data.peaks <- peaks.neural
+
+# b: running seq2gene function for many-to-many mapping based on sequence regions (note: no prior peaks annotations here, many-to-many mapping is done from the sequence)
+genes.m2m <- seq2gene(data.peaks, tssRegion = c(-3000, 3000), flankDistance = 3000, TxDb=txdb)
+
+# b: reactome pathways given many to many mapping and chromosome 1 and 2 genes as a background
+pathway.reac2 <- enrichPathway(genes.m2m, universe = genes.universe)
+
+# b: dotplot for enrichment results
+dotplot(pathway.reac2)
+
+```
+
+Let's search for enriched GO terms, and let's see how we can do it for all the peak sets together so we can easily compare the results on a `dotplot`. Also, let's learn how to simply the output of GO terms using `simplify` function, useful in cases where lots of GO terms turn-up to be significant and it becomes difficult to interpret results. `simply` function removed redundant GO terms obtained from `encrichGO` calling internally `GoSemSim` function to calculate similarities among GO terms and removes those highly similar terms by keeping one representative term.
+
+```bash
+
+# creating a gene list with ENTREZID ideas extrated from our annotation list, containing annotated peaks for all four cell lines
+list.genes = lapply(list.annotations, function(i) as.data.frame(i)$geneId)
+names(list.genes) <- sub("_", "\n", names(list.genes))
+
+# running enrichedGO function to find enriched MF correlation_libraries_normalised on the gene list
+
+compMF <- compareCluster(geneCluster = list.genes,
+                       fun           = "enrichGO",
+                       pvalueCutoff  = 0.05,
+                       pAdjustMethod = "BH",
+                       OrgDb='org.Hs.eg.db',
+                       ont="MF")
+
+# comparing results on a dotplot
+dotplot(compMF)
+
+# simplifying results although here we do not have problems with too many GO terms
+compMF.flr <- simplify(compMF, cutoff = 0.7, by = "p.adjust", select_fun = min, measure = "Wang", semData = NULL)
+
+# dotplot on reduced GO terms
+dotplot(compMF.flr)
 
 
 
-
+````
 
 ## Concluding remarks and next steps <a name="Next">
+There are different flavours to functional annotations, and what and how functional annotations should be done is context dependent, i.e. they should be adjusted given available data and biological question being asked. There are many methods out there, all relying on the available annotations and databases, being constantly improved and developed. As a rule of thumb to understand the results and be able to draw biological conclusions, it may be good to think about i) the statistical test behind the method, ii) what is compared against what (i.e. genes vs. background) and which databases are being use (i.e. KEGG, reactome, DO).
+
+For more examples on what can be done in terms on functional annotations, we recommend reading tutorials on [clusterProfiler](http://bioconductor.org/packages/release/bioc/vignettes/clusterProfiler/inst/doc/clusterProfiler.html#reduce-redundancy-of-enriched-go-terms) and [DOSE](https://bioconductor.org/packages/release/bioc/vignettes/DOSE/inst/doc/DOSE.html), where you can further learn about semantic similarity analysis, disease enrichment analysis, GSEA analysis and many more.
 
 
 ----
@@ -307,23 +394,50 @@ Fig: Average profile of ChIP peaks among different cell lines
 
 #### Peaks annotations
 ![fig-anno-vennpie](../figures/lab-chipseeker/fig-anno-vennpie-1.pdf)
+
 Fig: Genomic annotations by vennpie
 
 ----
+
 ![fig-anno-barplot](../figures/lab-chipseeker/fig-anno-barplot-1.pdf)
+
 Fig: Genomic annotations by barplot
 
 ____
+
 ![fig-anno-upsetplot](../figures/lab-chipseeker/fig-anno-upsetplot-1.pdf)
+
 Fig: Annotations overlap with UpSetPlot
 
 -----
+
 ![fig-anno-barplot-cmp](../figures/lab-chipseeker/fig-anno-barplot-cmp-1.pdf)
+
 Fig: Genomics locations: dataset comparisons with barplot
 
 ----
+
 ![fig-anno-dist-to-tss-cmp](../figures/lab-chipseeker/fig-anno-dist-to-tss-cmp-1.pdf)
+
 Fig: Distance to TSS: datasets comparisons
 
+-----
 
 #### Functional annotations
+![fig-func-reactome](../figures/lab-chipseeker/fig-func-reactome-1.pdf)
+
+Fig: Dotplot for enriched reactome pathways for neuronal peaks (many-to-many mapping)
+
+-----
+
+![fig-func-GO](../figures/lab-chipseeker/fig-func-go-1.pdf)
+
+Fig: Comparison of enriched GO MF terms (mapping to the nearest gene)
+
+--------
+
+![fig-func-GO-simp](../figures/lab-chipseeker/fig-func-go-simp-1.pdf)
+
+Fig: Comparison of enriched GO MF terms (mapping to the nearest gene) after reducing redundant terms
+
+_____
