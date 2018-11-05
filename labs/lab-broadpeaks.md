@@ -1,10 +1,3 @@
-[//]: # (Broad peak calling: tutorial for ChIP-seq lab))
-
-<!-- version 1
-still experimental, to be improved
-5 xi 2018
- -->
-
 #Detection of broad peaks from ChIP-seq data
 
 
@@ -105,12 +98,11 @@ These metrics have been developed with application to TF ChIP-seq in mind, and y
 
 ChIP:
 
-![ChIP](results/plots/xcor/cmpl/SRR1536557.bwt.hg38_dm6.sorted.hg38.xcor_ppqt.pdf)
-
+<img src="../figures/lab-broadpeaks/SRR1536557_xcor.pdf" alt="" style="width: 400px;"/><br>
 
 input:
 
-![input](results/plots/xcor/cmpl/SRR1584489.bwt.hg38_dm6.sorted.hg38.xcor_ppqt.pdf)
+<img src="../figures/lab-broadpeaks/SRR1584489_xcor.pdf" alt="" style="width: 400px;"/><br>
 
 
 As for the ChIP, the cross correlation profile of factors with broad occupancy patterns is not going to be as sharp as for TFs, and the values of NSC and RSC tend to be lower, which does not mean that the ChIP failed. In fact, the developers of the tool do not recommend using the same NSC / RSC values as quality cutoffs for broad marks. However, input samples should not display signs of enrichment, as is the case here.
@@ -119,7 +111,7 @@ As for the ChIP, the cross correlation profile of factors with broad occupancy p
 
 Another plot worth examining is cumulative enrichment (aka fingerprint from deepTools):
 
-![fingerprint](results/plots/fingerprint/cmpl.GSE60104.fingerprint.pdf)
+<img src="../figures/lab-broadpeaks/cmplGSE60104fingerprint.pdf" alt="" style="width: 400px;"/><br>
 
 You can see that even though the cross correlation metrics don't look great, to put it mildly, some enrichment can be observed for the ChIP samples, and not for the input samples. As this data is data from very shallow sequencing, the fraction of the genome covered by reads is smaller than expected (0.3 for the best sample). Thus we do not expect to detect all occupancy sites, only the ones which give the strongest signal (this is actually an advantage for this class, as it reduces the running time).
 
@@ -183,7 +175,7 @@ The first two locations visualise peaks longer than 2kb. The third and the fourt
 
 An example (two upper tracks are ChIP samples, the bottom track is input; the annotation is refseq genes and peaks called for sample 100_r1):
 
-![igv](igv/broad3.png)
+<img src="../figures/lab-broadpeaks/broad3.png" alt="" style="width: 400px;"/><br>
 
 
 All the above but, perhaps the fifth location most of all, demonstrate one of the common caveats of calling broad peaks: regions obviously enriched in a mark of interest are represented as a series of adjoining peaks which in fact should be merged into one long enrichment domain. You may leave it as is, or merge the peaks into longer ones, depending on the downstream application.
