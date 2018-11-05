@@ -180,7 +180,7 @@ An example (two upper tracks are ChIP samples, the bottom track is input; the an
 
 All the above but, perhaps the fifth location most of all, demonstrate one of the common caveats of calling broad peaks: regions obviously enriched in a mark of interest are represented as a series of adjoining peaks which in fact should be merged into one long enrichment domain. You may leave it as is, or merge the peaks into longer ones, depending on the downstream application.
 
-##Postprocessing of peak candidates
+## Postprocessing of peak candidates
 
 Please note that this step is only an example, as ***any postprocessing of peak calling results is highly project specific***.
 
