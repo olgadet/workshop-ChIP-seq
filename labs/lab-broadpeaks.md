@@ -1,7 +1,7 @@
-#Detection of broad peaks from ChIP-seq data
+# Detection of broad peaks from ChIP-seq data
 
 
-##Requirements
+## Requirements
 
 * MACS 2.1.2 (this version is not available as a module on Rackham)
 * R 3.5.0 (2018-04-23) or newer
@@ -59,7 +59,7 @@ https://www.uppmax.uu.se/support/user-guides/python-modules-guide/
 Instructions how to install **R and Bioconductor packages** (including dependencies for csaw) can be found in instructions to previous labs. Please note that this workflow has been tested using R 3.5.0 and csaw 1.14.1.
 
 
-##Data
+## Data
 
 We will use ChIP-seq of H3K79me2 from Orlando et al, 2014 ("Quantitative ChIP-Seq Normalization Reveals Global Modulation of the Epigenome"). H3K79me2 is enriched at active promoters and linked to transcriptional activation. This is a SE data set, which admitedly is not the best design for broad marks. To use this procedure with PE data, please follow modifications listed on https://github.com/taoliu/MACS.
 
@@ -107,7 +107,7 @@ input:
 
 As for the ChIP, the cross correlation profile of factors with broad occupancy patterns is not going to be as sharp as for TFs, and the values of NSC and RSC tend to be lower, which does not mean that the ChIP failed. In fact, the developers of the tool do not recommend using the same NSC / RSC values as quality cutoffs for broad marks. However, input samples should not display signs of enrichment, as is the case here.
 
-###Cumulative enrichment
+### Cumulative enrichment
 
 Another plot worth examining is cumulative enrichment (aka fingerprint from deepTools):
 
@@ -147,7 +147,7 @@ How many peaks were identified?
 
 This is a preliminary peak list, and in case of broad peaks, it almost always needs some processing or filtering.
 
-##Visual inspection of the peaks
+## Visual inspection of the peaks
 
 You will use IGV for this step, and it is recommended that you run it locally on your own computer. Please load `hg38` reference genome.
 
