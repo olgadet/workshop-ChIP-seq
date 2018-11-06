@@ -122,10 +122,6 @@ If the installation above went without any problem you should be able
 to fire up R-studio and see something like the following:
 <img src="files/R-studio.png" style="width:400px;" />
 
-If you do not see a screen like this one please send an email to
-thomas.kallman@nbis.se describing the error as well which operative operative
-system you are running.
-
 # IGV
 To install, follow the instructions on the [IGV website](http://software.broadinstitute.org/software/igv/)
 
