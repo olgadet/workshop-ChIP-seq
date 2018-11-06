@@ -31,6 +31,7 @@ Held in SciLifeLab Solna, from 2018-11-07 to 2018-11-09
 * [Csaw](labs/lab-csaw) (Alternative differential binding analyses) [local version]
 * [Motifs](labs/lab-motifs) (Motifs finding) [Uppmax]
 * [Public resources](labs/lab-public-resources) (Finding data in public resources) [local]
+* [Broad peak calling](labs/lab-broadpeaks) (Calling broad peaks) [local]
 
 ## Address and travel suggestions
 [Travel Info](travel)  
