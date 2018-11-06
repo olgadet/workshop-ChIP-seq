@@ -1,3 +1,10 @@
+---
+layout: default
+title:  'broad peaks'
+---
+
+
+
 # Detection of broad peaks from ChIP-seq data
 
 
