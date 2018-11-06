@@ -3,7 +3,7 @@ layout: default
 title:  'ChIP-seq down-stream analysis'
 ---
 
-# ChIP-seq down-stream analysis: ChIPseeker
+# ChIP-seq downstream analysis: ChIPseeker
 
 ### Learning outcomes
 Using `ChIPseeker` package
