@@ -118,7 +118,7 @@ Effective genome size for hg38 is `3.0e9`.
 The estimated fragment size is `180 bps` (`phantompeakqualtools`).
 
 ```
-mkdir results/macs
+mkdir -p results/macs
 cd results/macs
 
 ln -s /sw/share/compstore/courses/ngsintro/chipseq/broad_peaks/bam/SRR1536557.bwt.hg38_dm6.sorted.hg38.BLfilt.bam
