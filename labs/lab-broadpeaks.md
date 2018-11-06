@@ -248,7 +248,7 @@ cd /desired/location
 
 scp <USERNAME>@rackham.uppmax.uu.se:/sw/share/compstore/courses/ngsintro/chipseq/broad_peaks/broad_peaks_bam.tar.gz .
 
-#type the password at prompt
+#type your password at the prompt
 
 tar zcvf broad_peaks_bam.tar.gz
 ```
