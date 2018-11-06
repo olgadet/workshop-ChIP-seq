@@ -11,7 +11,9 @@ Held in SciLifeLab Solna, from 2018-11-07 to 2018-11-09
 [Participants](admin/Participants/participants.pdf)
 
 
-[Alternative Files Locations: downstream analysis main tutorial](https://stockholmuniversity.box.com/s/7xdhmxuj9sgdmt5pvb6k8klogszwq7n2)
+Alternative Files Locations
+* [downstream analysis main tutorial](https://stockholmuniversity.box.com/s/7xdhmxuj9sgdmt5pvb6k8klogszwq7n2)
+
 
 [Schedule](schedule)  
 
