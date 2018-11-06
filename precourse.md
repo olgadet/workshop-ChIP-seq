@@ -63,6 +63,8 @@ the latest version of R and R-studio.
 
 ### R
 
+Install version 3.5.0 or higher 
+
 1.  Go to [CRAN](https://cran.rstudio.com)
 2.  Click on the link corresponding to your operative system
 3.  Download the recommended files for your system.
