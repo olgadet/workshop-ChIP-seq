@@ -82,6 +82,12 @@ As always, one should start the analysis from assesment of data quality. This is
 
 ### Cross-correlation and related metrics
 
+The files discussed inthis section can be accessed at 
+`/sw/share/compstore/courses/ngsintro/chipseq/broad_peaks/results_pre/fingerprint`
+and
+`/sw/share/compstore/courses/ngsintro/chipseq/broad_peaks/results_pre/xcor`
+.
+
 These metrics have been developed with application to TF ChIP-seq in mind, and you can see that the results for broad peaks are not as easy to interpret as for point-source factors. Below are cross correlation plots for the IP and input you are going to use for the exercise. Already from these plots alone it is evident that the data has some quality issues. At this point you should be able to identify them.
 
 
