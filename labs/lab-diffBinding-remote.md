@@ -15,13 +15,16 @@ title:  'ChIP-seq down-stream analysis'
 - [Data & Methods](#DataMethods)
 - [Setting-up](#Setting-up)
 
+
 - [Differential binding](#DB)
   - [Installing DiffBind](#DB_install)
   - [Running DiffBind](#DB_run)
 
+
 - [Functional analysis](#FA_local)
   - [Installing ChIPpeakAnno](#FA_install)
   - [Running ChIPpeakAnno](#FA_run)
+
 
 - [Concluding remarks and next steps](#Next)
 - [Appendix: figures](#Next)
@@ -34,7 +37,7 @@ In this part we will learn how to place our peaks in a biological context, by id
 ## Data & Methods <a name="DataMethods">
 We will continue using the same data as in the first part of the tutorial. Please note that usually **three biological replicates** are the **minimum requirement** for statistical analysis such as in factor occupancy.
 
-_The ENCODE data we are using have only two replicates and we are using them to demonstrate the tools and methodologies. No biological conclusions should be drawn from them, or as a matter of fact, from any other dataset with duplicates only. `Just because the tool computes does not make it right!`_
+_The ENCODE data we are using have only two replicates and we are using them to demonstrate the tools and methodologies. No biological conclusions should be drawn from them, or as a matter of fact, from any other dataset with duplicates only. Just because the tool computes does not make it right!_
 
 ## Setting-up  <a name="Setting-up">
 The setting-up is the same as for the _data processing_ tutorial.
@@ -45,7 +48,7 @@ If you have logged out: log back in, open interactive session, and run `chipseq_
 
 ```bash
 
-ssh -Y <username>@milou.uppmax.uu.se
+ssh -Y <username>@rackham.uppmax.uu.se
 interactive -A g2018030 -p core -n 4 --reservation=g2018030_FRI
 source ~/chipseq_env.sh
 
@@ -72,7 +75,7 @@ Let's
 -  go to the right directory given you are keeping files structure as for the first part of the tutorial.
 
 ```bash
-module load R_packages/3.4.0
+module load R_packages/3.5.0
 cd ~/chipseq/analysis/R
 ```
 
@@ -182,7 +185,7 @@ We will continue our R session. If you have logged-out or lost connection or sim
 ```bash
 cd ~/chipseq/analysis/R
 
-module load R_packages/3.4.0
+module load R_packages/3.5.0
 
 R
 

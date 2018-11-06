@@ -15,9 +15,11 @@ title:  'ChIP-seq down-stream analysis'
 - [Data & Methods](#DataMethods)
 - [Setting-up](#Setting-up)
 
+
 - [Differential binding](#DB)
   - [Installing DiffBind](#DB_install)
   - [Running DiffBind](#DB_run)
+
 
 - [Functional analysis](#FA_local)
   - [Installing ChIPpeakAnno](#FA_install)
@@ -36,7 +38,7 @@ In this part we will learn how to place our peaks in a biological context, by id
 ## Data & Methods <a name="DataMethods">
 We will continue using the same data as in the first part of the tutorial. Please note that usually **three biological replicates** are the **minimum requirement** for statistical analysis such as in factor occupancy.
 
-_The ENCODE data we are using have only two replicates and we are using them to demonstrate the tools and methodologies. No biological conclusions should be drawn from them, or as a matter of fact, from any other dataset with duplicates only. `Just because the tool computes does not make it right!`_
+_The ENCODE data we are using have only two replicates and we are using them to demonstrate the tools and methodologies. No biological conclusions should be drawn from them, or as a matter of fact, from any other dataset with duplicates only. Just because the tool computes does not make it right!_
 
 ## Setting-up  <a name="Setting-up">
 If you have not done it already, install R and R-Studio. Refer back to [pre-course](../precourse) preparations for instructions.
@@ -63,7 +65,7 @@ To be able to run `DiffBind` locally, we will need access to a set of files
 - BED files with called peaks regions
 - sample sheet information `.txt` file
 
-Download these from Uppmax with `_scp_`command:
+Download these from Box (link under Alternative Files locations on the main site) or download these from Uppmax with `_scp_`command:
 
 ```bash
 
@@ -84,8 +86,9 @@ You can type commands directly in the Console window. A bit smarter way is to op
 To use `DiffBind` package we need to install it first. To do so:
 ```bash
 
-source("https://bioconductor.org/biocLite.R")
-biocLite("DiffBind")
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("DiffBind", version = "3.8")
 
 ```
 
@@ -184,8 +187,9 @@ We will continue our R-Studio session. If you have logged-out or lost connection
 To install ChIPpeakAnno
 ```bash
 
-source("https://bioconductor.org/biocLite.R")
-biocLite("ChIPpeakAnno")
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("ChIPpeakAnno", version = "3.8")
 
 ```
 
@@ -233,14 +237,17 @@ Locally, we can install few more R libraries and annotation data to inspect our 
 
 ```bash
 
-source("https://bioconductor.org/biocLite.R")
-biocLite("org.Hs.eg.db")
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("org.Hs.eg.db", version = "3.8")
 
-source("https://bioconductor.org/biocLite.R")
-biocLite("reactome.db")
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("reactome.db", version = "3.8")
 
-source("https://bioconductor.org/biocLite.R")
-biocLite("TxDb.Hsapiens.UCSC.hg19.knownGene")
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("TxDb.Hsapiens.UCSC.hg19.knownGene", version = "3.8")
 
 ```
 
