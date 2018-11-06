@@ -383,13 +383,13 @@ Fig: Coverage plot for HeLa replicate 1 and 2 peaks (selected region)
 
 ----
 
-<img src=".../figures/lab-chipseeker/fig-TSS-heatmap-1.pdf" alt="" style="width: 600px;"/><br>
+<img src="../figures/lab-chipseeker/fig-TSS-heatmap-1.pdf" alt="" style="width: 600px;"/><br>
 
 Fig: Heatmap of ChIP peaks among different cell lines
 
 ----
 
-<img src=".../figures/lab-chipseeker/fig-TSS-avg-profile-1.pdf" alt="" style="width: 600px;"/><br>
+<img src="../figures/lab-chipseeker/fig-TSS-avg-profile-1.pdf" alt="" style="width: 600px;"/><br>
 
 Fig: Average profile of ChIP peaks among different cell lines
 
@@ -397,50 +397,50 @@ Fig: Average profile of ChIP peaks among different cell lines
 ----
 
 #### Peaks annotations
-<img src=".../figures/lab-chipseeker/fig-anno-vennpie-1.pdf" alt="" style="width: 600px;"/><br>
+<img src="../figures/lab-chipseeker/fig-anno-vennpie-1.pdf" alt="" style="width: 600px;"/><br>
 
 Fig: Genomic annotations by vennpie
 
 ----
 
-<img src=".../figures/lab-chipseeker/fig-anno-barplot-1.pdf" alt="" style="width: 600px;"/><br>
+<img src="../figures/lab-chipseeker/fig-anno-barplot-1.pdf" alt="" style="width: 600px;"/><br>
 
 Fig: Genomic annotations by barplot
 
 ____
 
-<img src=".../figures/lab-chipseeker/fig-anno-upsetplot-1.pdf" alt="" style="width: 600px;"/><br>
+<img src="../figures/lab-chipseeker/fig-anno-upsetplot-1.pdf" alt="" style="width: 600px;"/><br>
 
 Fig: Annotations overlap with UpSetPlot
 
 -----
 
-<img src=".../figures/lab-chipseeker/fig-anno-barplot-cmp-1.pdf" alt="" style="width: 600px;"/><br>
+<img src="../figures/lab-chipseeker/fig-anno-barplot-cmp-1.pdf" alt="" style="width: 600px;"/><br>
 
 Fig: Genomics locations: dataset comparisons with barplot
 
 ----
 
-<img src=".../figures/lab-chipseeker/fig-anno-dist-to-tss-cmp-1.pdf" alt="" style="width: 600px;"/><br>
+<img src="../figures/lab-chipseeker/fig-anno-dist-to-tss-cmp-1.pdf" alt="" style="width: 600px;"/><br>
 
 Fig: Distance to TSS: datasets comparisons
 
 -----
 
 #### Functional annotations
-<img src=".../figures/lab-chipseeker/fig-func-reactome-1.pdf" alt="" style="width: 600px;"/><br>
+<img src="../figures/lab-chipseeker/fig-func-reactome-1.pdf" alt="" style="width: 600px;"/><br>
 
 Fig: Dotplot for enriched reactome pathways for neuronal peaks (many-to-many mapping)
 
 -----
 
-<img src=".../figures/lab-chipseeker/fig-func-go-1.pdf" alt="" style="width: 600px;"/><br>
+<img src="../figures/lab-chipseeker/fig-func-go-1.pdf" alt="" style="width: 600px;"/><br>
 
 Fig: Comparison of enriched GO MF terms (mapping to the nearest gene)
 
 --------
 
-<img src=".../figures/lab-chipseeker/fig-func-go-simp-1.pdf" alt="" style="width: 600px;"/><br>
+<img src="../figures/lab-chipseeker/fig-func-go-simp-1.pdf" alt="" style="width: 600px;"/><br>
 
 Fig: Comparison of enriched GO MF terms (mapping to the nearest gene) after reducing redundant terms
 
