@@ -14,19 +14,19 @@ Room: Fire, Gamma 2
 
 **08.45 - 09.00** pre-course coffee
 
-**09:00 - 09.15** Welcome (Olga, Agata)
+**09:00 - 09.15** [Welcome](lectures/slides-welcome.pdf) (Olga, Agata)
 
-**09.15 - 10.15** Lecture: ChIP-seq data analysis principles (**Agata**)
+**09.15 - 10.15** [Lecture: ChIP-seq data analysis principles](lectures/slides-main-2017.pdf) (**Agata**)
 
 **10.15 - 10.30** Discussion: getting to know each other (Agata, Jakub, **Olga**)
 
-**10.15 - 10.45** Introduction to practicals I: data processing (Agata, Jakub, **Olga**)
+**10.15 - 10.45** [Introduction to practicals I: data processing](lectures/slides-data-processing.pdf) (Agata, Jakub, **Olga**)
 
-**10.30 - 12.00** Practicals: ChIP-seq data processing (Agata, Jakub, Olga, John/Diana)
+**10.30 - 12.00** [Practicals: ChIP-seq data processing](index) (Agata, Jakub, Olga, John/Diana)
 
 **12.00 - 13.30** _lunch_
 
-**13.30 - 17.00** Practicals: ChIP-seq data processing (Agata, Jakub, Olga, John/Diana)
+**13.30 - 17.00** [Practicals: ChIP-seq data processing](index) (Agata, Jakub, Olga, John/Diana)
 
 ----
 
@@ -36,21 +36,21 @@ Room: Fire, Gamma 2
 **09:00 - 09.30** Discussion: ChIP-seq data processing (**Agata**, Jakub, Olga)
 
 **09.30 - 10.30** Introduction to practicals II:  
-- differential binding (Olga)
-- functional annotations (Olga)
-- motifs (Jakub)
-- broad peaks (Agata)
+- [differential binding](lectures/slides-db-func.pdf) (Olga)
+- [functional annotations](lectures/slides-db-func.pdf) (Olga)
+- [motifs](lectures/slides-motif-finding.pdf) (Jakub)
+- [broad peaks](lectures/slides-broad-peaks.pdf) (Agata)
 
-**10.30 - 12.00** Practicals: downstream analysis (Agata, Jakub, Olga, John/Diana)
+**10.30 - 12.00** [Practicals: downstream analysis](index) (Agata, Jakub, Olga, John/Diana)
 
 **12.00 - 13.30** _lunch_
 
-**13.00 - 14.00** Lecture: case study and beyond (all the interesting things) (**Jakub**, Agata)
+**13.00 - 14.00** [Lecture: case study and beyond (all the interesting things)](lectures/slides-case-study) (**Jakub**, Agata)
 
 
 Parallel session
 
-**13.30 - 17.10** Practicals: downstream analysis (John/Diana)
+**13.30 - 17.10** [Practicals: downstream analysis](index) (John/Diana)
 
 **13.30 - 17.00** Discussion: bring your own project (Agata, Jakub, Olga)
 
@@ -59,19 +59,19 @@ Parallel session
 ### Friday 2018-11-09
 Room: Fire, Gamma 2
 
-**09.00 - 10.00** Introduction to SciLifeLab NGI ChIP-seq pipeline (Phil Ewels)
+**09.00 - 10.00** [Introduction to SciLifeLab NGI ChIP-seq pipeline](lectures/slides-NGI-2017) (Phil Ewels)
 
 **10.00 - 10.30** Discussions: downstream analysis
 
 **10.30 - 11.00** Introduction to practicals III
 - exo-spike (Agata)
-- public data resources (Jakub)
+- [public data resources](lectures/slides-public-resources.pdf) (Jakub)
 
-**11.00 - 12.00** Practicals: downstream analysis (Agata, Jakub, Olga, John/Diana)
+**11.00 - 12.00** [Practicals: downstream analysis](index) (Agata, Jakub, Olga, John/Diana)
 
 **12.00 - 13.30** _lunch_
 
-**13.30 - 14.30** Practicals: downstream analysis (Agata, Jakub, Olga, John/Diana)
+**13.30 - 14.30** [Practicals: downstream analysis](index) (Agata, Jakub, Olga, John/Diana)
 
 **14.30 - 17.00** Discussion & wrap-up (**Agata**, Jakub, **Olga**)
 
