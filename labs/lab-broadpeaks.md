@@ -82,7 +82,7 @@ As always, one should start the analysis from assesment of data quality. This is
 
 ### Cross-correlation and related metrics
 
-The files discussed inthis section can be accessed at 
+The files discussed in this section can be accessed at 
 `/sw/share/compstore/courses/ngsintro/chipseq/broad_peaks/results_pre/fingerprint`
 and
 `/sw/share/compstore/courses/ngsintro/chipseq/broad_peaks/results_pre/xcor`
