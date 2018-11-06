@@ -11,7 +11,15 @@ title:  'broad peaks'
 ## Requirements
 
 * MACS 2.1.2 (this version is not available as a module on Rackham)
+* R 3.5.0 (2018-04-23) or newer
+* csaw and its dependencies
 
+Bioconductor packages required for annotation:
+
+* org.Hs.eg.db
+* TxDb.Hsapiens.UCSC.hg38.knownGene
+
+Please note that this lab consists of two parts: (i) calling broad peaks using MACS (on Uppmax) and (ii) finding enriched genomic windows using R and csaw (local).
 
 **MACS 2.1.2 installation (on Uppmax):**
 
@@ -53,6 +61,8 @@ export PATH=$PATH:/home/agata/soft/macs/MACS/bin
 The detailed instructions on how to install and use pyenv on Uppmax are at
 
 https://www.uppmax.uu.se/support/user-guides/python-modules-guide/
+
+Instructions how to install **R and Bioconductor packages** (including dependencies for csaw) can be found in instructions to previous labs. Please note that this workflow has been tested using R 3.5.0 and csaw 1.14.1.
 
 
 ## Data
@@ -137,6 +147,16 @@ pyenv global 2.7.9
 macs2 callpeak -t SRR1536557.bwt.hg38_dm6.sorted.hg38.BLfilt.bam -c SRR1584489.bwt.hg38_dm6.sorted.hg38.BLfilt.bam -n 50_R1 --outdir 50_R1 -f BAM --gsize 3.0e9 -q 0.1 --nomodel --extsize 180 --broad --broad-cutoff 0.1
 
 ```
+If you would like to compare the results of two different methods of finding broad peaks, repeat this with another data set:
+
+```
+ln -s /sw/share/compstore/courses/ngsintro/chipseq/broad_peaks/bam/SRR1536561.bwt.hg38_dm6.sorted.hg38.BLfilt.bam
+ln -s /sw/share/compstore/courses/ngsintro/chipseq/broad_peaks/bam/SRR1584493.bwt.hg38_dm6.sorted.hg38.BLfilt.bam
+
+macs2 callpeak -t SRR1536561.bwt.hg38_dm6.sorted.hg38.BLfilt.bam -c SRR1584493.bwt.hg38_dm6.sorted.hg38.BLfilt.bam -n 100_R1 --outdir 100_R1 -f BAM --gsize 3.0e9 -q 0.1 --nomodel --extsize 180 --broad --broad-cutoff 0.1
+
+```
+
 
 You can now inspect the results in the output folder `50_R1`. The structure is alike the output for calling narrow peaks. The file `*.broadPeak` is in `BED6+3` format which is similar to `narrowPeak` file used for point-source factors, except for missing the 10th column for annotating peak summits. Look here (https://github.com/taoliu/MACS) for details.
 
@@ -208,3 +228,200 @@ wc -l 50_r1.merged.bed
 
 #11732 50_r1.merged.bed
 ```
+
+## Alternative approach: window-based enrichment analysis (csaw)
+
+This workflow is similar to the one using `csaw` designed for TF peaks. The differences pertain to analysis of signal from diffuse marks. Please check the "Csaw (Alternative differential binding analyses)" tutorial for more detailed comments on each step.
+
+You will use data from the same dataset, however, the files were processed in a different manner: the alignments were not filtered to remove duplictae reads nor the reads mapping to the ENCODE blacklisted regions. To reduce the computational burden, the bam files were subset to contain alignments to `chr1`.
+
+This exercise is best performed locally. It has not been tested on Uppmax.
+
+First, you need to copy the necessary files to your laptop:
+
+```
+cd /desired/location
+
+scp <USERNAME>@rackham.uppmax.uu.se:/sw/share/compstore/courses/ngsintro/chipseq/broad_peaks/broad_peaks_bam.tar.gz .
+
+#type the password at prompt
+
+tar zcvf broad_peaks_bam.tar.gz
+```
+
+The remaining part of the exercise is performed in `R`.
+
+Sort out the working directory and file paths:
+
+```
+setwd("/path/to/workdir")
+
+dir.data = "/path/to/desired/location/bam_chr1"
+
+k79_100_1=file.path(dir.data,"SRR1536561.bwt.hg38_dm6.sorted.chr1.hg38.bam")
+k79_100_2=file.path(dir.data,"SRR1536561.bwt.hg38_dm6.sorted.chr1.hg38.bam")
+k79_100_i1=file.path(dir.data,"SRR1584493.bwt.hg38_dm6.sorted.chr1.hg38.bam")
+k79_100_i2=file.path(dir.data,"SRR1584498.bwt.hg38_dm6.sorted.chr1.hg38.bam")
+
+bam.files <- c(k79_100_1,k79_100_2,k79_100_i1,k79_100_i2)
+```
+
+Read in the data:
+
+```
+frag.len=180
+
+library(csaw)
+
+data <- windowCounts(bam.files, ext=frag.len, width=100) 
+```
+
+You will identify the enrichment windows by performing a differential occupancy analysis between ChIP and input samples.
+
+Information on the contrast to test:
+```
+grouping <- factor(c('chip', 'chip', 'input', 'input'))
+design <- model.matrix(~0 + grouping)
+colnames(design) <- levels(grouping)
+library(edgeR)
+contrast <- makeContrasts(chip - input, levels=design)
+```
+
+
+Next, you need to filter out uninformative windows with low signal prior to further analysis. Selection of appropriate filtering strategy and cutoff is key to a successful detection of differential occupancu events, and is data dependent. Filtering is valid so long as it is independent of the test statistic under the null hypothesis.
+One possible approach involves choosing a filter threshold based on the fold change over
+the level of non-specific enrichment (background). The degree of background enrichment is estimated
+by counting reads into large bins across the genome.
+
+With `type="global"`, the `filterWindows` function returns the increase in the abundance of
+each window over the global background. 
+Windows are filtered by setting some minimum threshold on this increase. Here, a **fold change of 3** is necessary for a window to be considered as containing a binding site. 
+
+In this example, you estimate the global background using ChIP samples only. You can do it using the entire dataset of course.
+
+```
+bam.files_chip <- c(k79_100_1,k79_100_2)
+
+bin.size <- 2000L
+binned.ip <- windowCounts(bam.files_chip, bin=TRUE, width=bin.size, ext=frag.len)
+data.ip=data[,1:2]
+filter.stat <- filterWindows(data.ip, background=binned.ip, type="global")
+
+keep <- filter.stat$filter > log2(3)
+data.filt <- data[keep,]
+```
+To examine how many windows passed the filtering:
+```
+summary(keep)
+
+##   Mode   FALSE    TRUE 
+##  logical   56543   61752 
+```
+
+To normalise the data for different library sizes you need to calculate normalisation factors based on large bins:
+
+```
+binned <- windowCounts(bam.files, bin=TRUE, width=10000)
+data.filt <- normOffsets(binned, se.out=data.filt)
+
+data.filt$norm.factors
+## [1] 0.9970575 0.9970575 0.9310318 1.0804262
+
+```
+
+
+Detection of DB windows:
+
+```
+data.filt.calc <- asDGEList(data.filt)
+data.filt.calc <- estimateDisp(data.filt.calc, design)
+fit <- glmQLFit(data.filt.calc, design, robust=TRUE)
+results <- glmQLFTest(fit, contrast=contrast)
+```
+
+You can inspect the raw results:
+
+```
+> head(results$table)
+       logFC   logCPM            F      PValue
+1 5.12314899 3.507425 2.028955e+10 0.004065537
+2 1.24105882 3.644954 3.018273e+00 0.210391635
+3 1.24105882 3.644954 3.018273e+00 0.210391635
+4 1.07213133 4.470860 2.003744e+00 0.279525197
+5 0.44631285 4.740069 2.820544e-01 0.643192436
+6 0.03694957 4.829412 1.729703e-02 0.939536489
+```
+
+The following steps will calculate the FDR for each peak, merge peaks withink 1 kb and calculate the FDR for these composite peaks.
+
+```
+merged <- mergeWindows(rowRanges(data.filt), tol=1000L)
+table.combined <- combineTests(merged$id, results$table)
+```
+
+Short inspection of the results:
+
+```
+head(table.combined)
+
+##   nWindows logFC.up logFC.down      PValue         FDR direction
+## 1       16        5          3 0.065048599 0.083668125        up
+## 2       23        0         20 0.004044035 0.008745581      down
+## 3        1        0          1 0.167741339 0.203667724      down
+## 4        2        2          0 0.210391635 0.233814958        up
+## 5        7        6          0 0.013399521 0.020487780        up
+## 6        1        1          0 0.057954382 0.075061398        up
+```
+
+How many regions are up (i.e. enriched in chip compared to input)?
+
+```
+is.sig.region <- table.combined$FDR <= 0.1
+table(table.combined$direction[is.sig.region])
+
+## down mixed    up 
+##   57    32  2103 
+```
+
+Does this make sense? How does it compare to results obtained from a MACS run?
+
+You can now annotate the results as in the csaw TF exercise:
+
+```
+library(org.Hs.eg.db)
+library(TxDb.Hsapiens.UCSC.hg38.knownGene)
+
+anno <- detailRanges(merged$region, txdb=TxDb.Hsapiens.UCSC.hg38.knownGene,
+orgdb=org.Hs.eg.db, promoter=c(3000, 1000), dist=5000)
+
+merged$region$overlap <- anno$overlap
+merged$region$left <- anno$left
+merged$region$right <- anno$right
+
+all.results <- data.frame(as.data.frame(merged$region)[,1:3], table.combined, anno)
+
+sig=all.results[all.results$FDR<0.05,]
+all.results <- all.results[order(all.results$PValue),]
+
+head(all.results)
+
+filename="k79me2_100_csaw.txt"
+write.table(all.results,filename,sep="\t",quote=FALSE,row.names=FALSE)
+```
+
+To compare with peaks detected by MACS it is convenient to save the results in `BED` format:
+
+```
+sig.up=sig[sig$direction=="up",]
+
+starts=sig.up[,2]-1
+
+sig.up[,2]=starts
+
+sig_bed=sig.up[,c(1,2,3)]
+
+filename="k79me2_100_peaks.bed"
+write.table(sig_bed,filename,sep="\t",col.names=FALSE,quote=FALSE,row.names=FALSE)
+```
+
+You can now load the `bed` file to `IGV` along with the appropriate `broad.Peak` file and zoom in to your favourite location on chromosome 1.
