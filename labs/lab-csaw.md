@@ -12,14 +12,14 @@ still experimental, to be improved
 
 This is an alternative workflow for detection of differential binding / occupancy in ChIP-seq data. In contrast to working with reads counted within peaks detected in a peak calling step (as in the earlier example with DiffBind), this approach uses a sliding window to count reads across the genome. Each window is then tested for significant differences between libraries from different conditions, using the methods in the edgeR package. This package also offers an FDR control strategy more appropriate for ChIP-seq experiments than simple BH adjustment.
 
-It can be used for point-source binding (TFs) as well as for broad signal (histones). However, it can only be used for cases where ***global occupancy leves are unchanged***.
+It can be used for point-source binding (TFs) as well as for broad signal (histones). However, it can only be used for cases where ***global occupancy levels are unchanged***.
 
 As this method is agnostic to signal structure, it requires careful choice of strategies for filtering and normalisation. Here, we show a very simple workflow. More details can be found in the [Csaw User Guide document](http://bioconductor.org/packages/devel/bioc/vignettes/csaw/inst/doc/csawUserGuide.pdf) available from Bioconductor.
 
 
 ## Requirements
 
-* R version 3.4.2 (2017-09-28)
+* R version > 3.4.2 (2017-09-28)
 * [statmod](https://cran.r-project.org/web/packages/statmod/index.html), required for csaw
 * [gfortran](https://gcc.gnu.org/wiki/GFortranBinaries), required for csaw
 * csaw
@@ -42,8 +42,9 @@ install.packages("https://cran.r-project.org/src/contrib/statmod_1.4.30.tar.gz",
 
 To install Bioconductor packages:
 ```
-source("https://bioconductor.org/biocLite.R")
-biocLite(c("csaw","edgeR","org.Hs.eg.db","TxDb.Hsapiens.UCSC.hg19.knownGene"))
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install(c("csaw","edgeR","org.Hs.eg.db","TxDb.Hsapiens.UCSC.hg19.knownGene")
 ```
 
 To install gfortran follow the directions on its [homepage](https://gcc.gnu.org/wiki/GFortranBinaries). Further dependencies may be required for successful installation.
