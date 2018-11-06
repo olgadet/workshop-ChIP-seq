@@ -49,15 +49,16 @@
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
+%\documentclass{scrartcl}
+%\setkomafont{disposition}{\normalfont\bfseries}
 
 \usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
 \geometry{a4paper,
  total={170mm,257mm},
  left=20mm,
- right=20mm,
  top=20mm,
- bottom=40mm}                   % ... or a4paper or a5paper or ...
-\geometry{landscape}                % Activate for for rotated page geometry
+ bottom=40mm}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
 \usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{graphicx}
 \usepackage{amssymb}
@@ -66,8 +67,11 @@
 \usepackage{hyperref}
 \usepackage{booktabs}
 \usepackage{colortbl, xcolor}
-\usepackage{array}
+\usepackage{multicol}
+\usepackage{xcolor}
 \usepackage[utf8]{inputenc}
+
+
 
 \setlength{\columnsep}{1cm}
 \usepackage[backend=bibtex, sorting=none, style=chicago-authordate]{biblatex}
@@ -99,20 +103,10 @@
     tabsize=2
 }
 
-
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\
-    \arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\
-    \arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\
-    \arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{P}[1]{>{\raggedright\tabularxbackslash}p{#1}}
-
 %\usepackage{pdflscape}
- \usepackage{rotating}
-  
 \usepackage{textcomp}
 \lstset{style=mystyle}
+
 
 \hypersetup{%
   colorlinks=true,% hyperlinks will be coloured
@@ -128,60 +122,88 @@
 \lhead{\includegraphics[height=1.3cm, width=2cm]{../Images/nbislogo.png}} % left logo
 \rhead{\includegraphics[height=1.3cm, width=4cm]{../Images/SciLifeLab-logo.jpg}} % right logo
 \cfoot{}
-\lfoot{ChIP-seq data analysis, 23-24 November, 2017, Stockholm, 1hp}
 \renewcommand{\headrulewidth}{0pt} % remove rule below header
 
 %% DEFINE TOOLS AND VARIABLES
-\newcommand{\courseName}{ChIP-seq data analysis, 1 hp}
+\newcommand{\courseName}{ChIP-seq data analysis}
+\newcommand{\coursePoints}{1 hp}
 \newcommand{\courseLocation}{Stockholm}
-\newcommand{\courseDate}{2017-11-23, 2017-11-24}
+\newcommand{\courseDate}{07-09 November 2018}
+\newcommand{\courseLastDay}{09 November 2018}
 \newcommand{\courseLeaderA}{Olga Dethlefsen}
 \newcommand{\courseEmailA}{olga.dethlefsen@nbis.se}
 \newcommand{\courseLeaderB}{Agata Smialowska}
 \newcommand{\courseEmailB}{agata.smialowska@nbis.se}
+%\newcommand{\courseExaminer}{Olga Dethlefsen, PhD}
+\newcommand{\courseExaminer}{Agata Smialowska, PhD}
+\newcommand{\affilations}{National Bioinformatics Infrastructure Sweden, Science for Life Laboratory, Stockholm University}
 
 
 
-
-%% BEGIN DOCUMENT
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
+%\cbstart
+\large
+This is to certify that 
+
+
+\LARGE
+\color{blue} 
+Christian Sommerauer
+\color{black} 
+
+\large
+has successfully taken part in \newline \newline
+
+\color{blue} 
+\LARGE
+\begin{center}{\courseName}  \end{center} 
+\color{black} 
+
+\large
+\begin{center} Held in {\courseLocation}, {\courseDate} \end{center} 
+
+\vspace{8mm}
+\normalsize
+The course consisted of lectures, computer exercises and group discussions. The following topics were covered:
+\begin{itemize}
+  \item Peak-independent quality metrics
+  \item Peak calling
+  \item Peak-dependent quality metrics and visualization
+  \item Differential binding analysis
+  \item Common downstream functional analysis
+\end{itemize}
+
+
+\vspace{12mm}
+Examination: \newline
+Presence during all the lectures and computer/practical exercises
+
+\vspace{12mm}
+Arranged by: \newline
+National Bioinformatics Infrastructure Sweden (NBIS) \& Science for Life Laboratory (SciLifeLab)
+
+%The course is accepted as {\coursePoints} university credits.
+
+\vspace{5mm}
+\textit{{\courseLocation}, {\courseLastDay}}
+\vspace{15mm}
+
+
+{\courseExaminer} \newline
+\small
+Department of Biochemistry and Biophysics, Stockholm University \newline
+National Bioinformatics Infrastructure Sweden \newline
+Science for Life Laboratory \newline
+Course Examiner
 
 
 
-%% SUPPORT REQUEST
-%\newpage
+%First Last
+%Title, Department/Institution
+%University, NBIS, SciLifeLab
+%Course examiner
 
 
-% latex table generated in R 3.5.1 by xtable 1.8-3 package
-% Tue Nov  6 16:12:33 2018
-\begin{table}[ht]
-\centering
-\begin{tabular}{r|L{6cm}|L{6cm}}
-  \toprule
- & 1 & 2 \\ 
-  \midrule
-Alba Atienza &  &  \\ 
-   \rowcolor[gray]{0.95}Anna Palau de Miguel &  &  \\ 
-  Antonia Kalushkova &  &  \\ 
-   \rowcolor[gray]{0.95}Aron Skaftason &  &  \\ 
-  Christian Sommerauer &  &  \\ 
-   \rowcolor[gray]{0.95}Christos Coucoravas &  &  \\ 
-  Ineke Luijten &  &  \\ 
-   \rowcolor[gray]{0.95}Johanna Tingvall Gustafsson &  &  \\ 
-  Katja Stojkovic &  &  \\ 
-   \rowcolor[gray]{0.95}Konstantinos Toskas &  &  \\ 
-  Maria Bergsland &  &  \\ 
-   \rowcolor[gray]{0.95}My Björklund &  &  \\ 
-  Patrick Nylund &  &  \\ 
-   \rowcolor[gray]{0.95}Roy Francis &  &  \\ 
-  Wael Kamel &  &  \\ 
-   \rowcolor[gray]{0.95}Ying Qu &  &  \\ 
-   \bottomrule
-\end{tabular}
-\end{table}
-
-
-\end{document}  
-
+\end{document}

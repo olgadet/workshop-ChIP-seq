@@ -89,8 +89,8 @@
 \newcommand{\affilations}{National Bioinformatics Infrastructure Sweden, Science for Life Laboratory, Stockholm University}
 
 <<loadData, echo=F>>=
-#file.csv <- "NBIS-ChIP-seq-participants-2018.csv"
-#data.csv <- read.csv(file.csv)
+file.csv <- "NBIS-ChIP-seq-participants-2018.csv"
+data.csv <- read.csv(file.csv)
 
 # Students names
 idx.final <- which(data.csv$Final==1)
@@ -130,9 +130,6 @@ has successfully taken part in \newline \newline
 \normalsize
 The course consisted of lectures, computer exercises and group discussions. The following topics were covered:
 \begin{itemize}
-  \item Quality controls of raw sequencing reads
-  \item Reads trimming and filtering
-  \item Alignment to the reference genome
   \item Peak-independent quality metrics
   \item Peak calling
   \item Peak-dependent quality metrics and visualization
@@ -141,11 +138,11 @@ The course consisted of lectures, computer exercises and group discussions. The 
 \end{itemize}
 
 
-\vspace{5mm}
+\vspace{12mm}
 Examination: \newline
 Presence during all the lectures and computer/practical exercises
 
-\vspace{5mm}
+\vspace{12mm}
 Arranged by: \newline
 National Bioinformatics Infrastructure Sweden (NBIS) \& Science for Life Laboratory (SciLifeLab)
 
