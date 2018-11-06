@@ -169,6 +169,10 @@ How many peaks were identified?
 
 This is a preliminary peak list, and in case of broad peaks, it almost always needs some processing or filtering.
 
+NOTE:
+You can also copy the results from
+`/sw/share/compstore/courses/ngsintro/chipseq/broad_peaks/results_pre/macs`
+
 ## Visual inspection of the peaks
 
 You will use IGV for this step, and it is recommended that you run it locally on your own computer. Please load `hg38` reference genome.
