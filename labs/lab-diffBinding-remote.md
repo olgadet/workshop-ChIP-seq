@@ -11,23 +11,26 @@ title:  'ChIP-seq down-stream analysis'
 - perform functional enrichment analysis to identify predominant biological themes with `ChIPpeakAnno` and `reactome.db`
 
 ## Content
-- [Introduction](#Introduction)
-- [Data & Methods](#DataMethods)
-- [Setting-up](#Setting-up)
+[Introduction](#Introduction)
 
+[Data & Methods](#DataMethods)
 
-- [Differential binding](#DB)
-  - [Installing DiffBind](#DB_install)
-  - [Running DiffBind](#DB_run)
+[Setting-up](#Setting-up)
 
+[Differential binding](#DB)
 
-- [Functional analysis](#FA_local)
-  - [Installing ChIPpeakAnno](#FA_install)
-  - [Running ChIPpeakAnno](#FA_run)
+* [Installing DiffBind](#DB_install)
+* [Running DiffBind](#DB_run)
 
+[Functional analysis](#FA_local)
 
-- [Concluding remarks and next steps](#Next)
-- [Appendix: figures](#Next)
+* [Installing ChIPpeakAnno](#FA_install)
+* [Running ChIPpeakAnno](#FA_run)
+
+[Concluding remarks and next steps](#Next)
+
+[Appendix: figures](#Next)
+
 
 ## Introduction <a name="Introduction"></a>
 Welcome back to the second part of the tutorial. In the first part we have learnt how to access the quality of ChIP-seq data and we how to derive a consensus peakset for downstream analyses.
