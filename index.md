@@ -17,17 +17,16 @@ Held in SciLifeLab Solna, from 2018-11-07 to 2018-11-09
 
 ## Labs links
 
-### Part I
+#### Part I
 * [ChIP-seq data processing](labs/lab-processing) (Main data processing workflow) [Uppmax & locally]
 
-
 * [ChIPQC](labs/lab-chipqc) (Alternative QC analysis) [Uppmax or locally]
+
 * [deepTools visualisation](labs/lab-vis) (Additional signal visualisations with deepTools) [Uppmax]
 
-### Part II
+#### Part II
 * [Down-stream analysis](labs/lab-diffBinding-local) (Main differential binding and functional annotations workflow) [local version]
 * [Down-stream analysis](labs/lab-diffBinding-remote) (Main differential binding and functional annotations workflow) [Uppmax version]
-
 
 * [ChIPseeker](labs/lab-ChIPseeker) (ChIPseeker package for ChIP profiling, peaks annotations, visualisation and functional annotations) [local]
 
