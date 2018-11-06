@@ -16,7 +16,7 @@ Room: Fire, Gamma 2
 
 **09:00 - 09.15** [Welcome](lectures/slides-welcome.pdf) (Olga, Agata)
 
-**09.15 - 10.15** [Lecture: ChIP-seq data analysis principles](lectures/slides-main-2017.pdf) (**Agata**)
+**09.15 - 10.15** [Lecture: ChIP-seq data analysis principles](lectures/slides-main-2018.pdf) (**Agata**)
 
 **10.15 - 10.30** Discussion: getting to know each other (Agata, Jakub, **Olga**)
 
