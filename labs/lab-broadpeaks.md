@@ -4,13 +4,6 @@
 ## Requirements
 
 * MACS 2.1.2 (this version is not available as a module on Rackham)
-* R 3.5.0 (2018-04-23) or newer
-* csaw and its dependencies
-
-Bioconductor packages required for annotation:
-
-* org.Hs.eg.db
-* TxDb.Hsapiens.UCSC.hg38.knownGene
 
 
 **MACS 2.1.2 installation (on Uppmax):**
@@ -53,10 +46,6 @@ export PATH=$PATH:/home/agata/soft/macs/MACS/bin
 The detailed instructions on how to install and use pyenv on Uppmax are at
 
 https://www.uppmax.uu.se/support/user-guides/python-modules-guide/
-
-
-
-Instructions how to install **R and Bioconductor packages** (including dependencies for csaw) can be found in instructions to previous labs. Please note that this workflow has been tested using R 3.5.0 and csaw 1.14.1.
 
 
 ## Data
@@ -126,8 +115,8 @@ The estimated fragment size is `180 bps` (`phantompeakqualtools`).
 mkdir results/macs
 cd results/macs
 
-ln -s /proj/uppstore2017206/agata/teaching/for_course/broad/data/bam/SRR1536557.bwt.hg38_dm6.sorted.hg38.BLfilt.bam
-ln -s /proj/uppstore2017206/agata/teaching/for_course/broad/data/bam/SRR1584489.bwt.hg38_dm6.sorted.hg38.BLfilt.bam
+ln -s /sw/share/compstore/courses/ngsintro/chipseq/broad_peaks/bam/SRR1536557.bwt.hg38_dm6.sorted.hg38.BLfilt.bam
+ln -s /sw/share/compstore/courses/ngsintro/chipseq/broad_peaks/bam/SRR1584489.bwt.hg38_dm6.sorted.hg38.BLfilt.bam
 
 #if it is a different session than when installing pyenv and macs2:
 pyenv global 2.7.9
@@ -156,6 +145,9 @@ Required files are:
 * SRR1536557.bwt.hg38_dm6.sorted.hg38.BLfilt.bam and bai
 * SRR1584489.bwt.hg38_dm6.sorted.hg38.BLfilt.bam and bai
 * 50_r1_peaks.broadPeak
+
+You can access the bam and bai files from
+`/sw/share/compstore/courses/ngsintro/chipseq/broad_peaks/bam/`.
 
 You can look at the locations of interest. Some peaks with low FDR (q value) or high fold enrichment may be worth checking out. Or check your favourite gene.
 
