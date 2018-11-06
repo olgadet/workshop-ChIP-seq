@@ -588,13 +588,13 @@ Exploration suggestions:
 
 ----
 
-![IGV](../figures/lab-processing/IGV_ex1.png)
+<img src="../figures/lab-processing/IGV_ex1.png" alt="" style="width: 600px;"/><br>
 
 Example IGV view centered around chr1:1,233,734-1,235,455
 
 ----
 
-![IGV](../figures/lab-processing/IGV_ex2.png)
+<img src="../figures/lab-processing/IGV_ex2.png" alt="" style="width: 600px;"/><br>
 
 Example IGV view centered around chr2:242,004,675-242,008,035
 
