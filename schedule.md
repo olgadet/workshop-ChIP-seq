@@ -45,7 +45,7 @@ Room: Fire, Gamma 2
 
 **12.00 - 13.30** _lunch_
 
-**13.00 - 14.00** [Lecture: case study and beyond (all the interesting things)](lectures/slides-case-study) (**Jakub**, Agata)
+**13.00 - 14.00** [Lecture: case study and beyond (all the interesting things)](lectures/slides-case-study.pdf) (**Jakub**, Agata)
 
 
 Parallel session
