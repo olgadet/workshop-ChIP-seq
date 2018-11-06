@@ -11,7 +11,7 @@ Held in SciLifeLab Solna, from 2018-11-07 to 2018-11-09
 [Participants](admin/Participants/participants.pdf)
 
 
-[Alternative Files Locations](box)  
+[Alternative Files Locations: downstream analysis main tutorial](https://stockholmuniversity.box.com/s/7xdhmxuj9sgdmt5pvb6k8klogszwq7n2)
 
 [Schedule](schedule)  
 
@@ -20,13 +20,13 @@ Held in SciLifeLab Solna, from 2018-11-07 to 2018-11-09
 #### Part I
 * [ChIP-seq data processing](labs/lab-processing) (Main data processing workflow) [Uppmax & locally]
 
-* [ChIPQC](labs/lab-chipqc) (Alternative QC analysis) [Uppmax or locally]
+* [ChIPQC](labs/lab-chipqc) (Alternative QC analysis) [locally]
 
 * [deepTools visualisation](labs/lab-vis) (Additional signal visualisations with deepTools) [Uppmax]
 
 #### Part II
-* [Down-stream analysis](labs/lab-diffBinding-local) (Main differential binding and functional annotations workflow) [local version]
-* [Down-stream analysis](labs/lab-diffBinding-remote) (Main differential binding and functional annotations workflow) [Uppmax version]
+* [Downstream analysis](labs/lab-diffBinding-local) (Main differential binding and functional annotations workflow) [local version]
+* [Downstream analysis](labs/lab-diffBinding-remote) (Main differential binding and functional annotations workflow) [Uppmax version]
 
 * [ChIPseeker](labs/lab-ChIPseeker) (ChIPseeker package for ChIP profiling, peaks annotations, visualisation and functional annotations) [local]
 
