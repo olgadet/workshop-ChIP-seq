@@ -53,7 +53,7 @@ module load deepTools/2.5.1
 cp /sw/share/compstore/courses/ngsintro/chipseq/hg19/refGene_hg19_TSS_chr12_sorted_corr.bed ./
 
 computeMatrix reference-point -S hela_1.bw \
--R refGene_hg19_TSS_chr12.bed -b 5000 -a 5000 \
+-R refGene_hg19_TSS_chr12_sorted_corr.bed -b 5000 -a 5000 \
 --outFileName matrix.tss.dat --outFileNameMatrix matrix.tss.txt \
 --referencePoint=TSS --numberOfProcessors=max
 ```
