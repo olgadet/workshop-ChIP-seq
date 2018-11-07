@@ -50,7 +50,7 @@ We will need a BED file with positions of TSS that we can copy to the working di
 ```bash
 module load deepTools/2.5.1
 
-cp ../../hg19/refGene_hg19_TSS_chr12.bed ./
+cp /sw/share/compstore/courses/ngsintro/chipseq/hg19/refGene_hg19_TSS_chr12_sorted_corr.bed ./
 
 computeMatrix reference-point -S hela_1.bw \
 -R refGene_hg19_TSS_chr12.bed -b 5000 -a 5000 \
