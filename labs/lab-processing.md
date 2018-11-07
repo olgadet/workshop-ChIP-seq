@@ -85,10 +85,10 @@ We have booked half a node on Rackham per course participant. To run the tutoria
 
 ```bash
 ssh -Y username@rackham.uppmax.uu.se
-interactive -A g2018030 -p core -n 4 --reservation=g2018030_WED
-interactive -A g2018030 -p core -n 4 --reservation=g2018030_THU (on Thursday)
-interactive -A g2018030 -p core -n 4 --reservation=g2018030_FRI (on Friday)
+salloc -A g2018030 -t 04:00:00 -p core -n 8 --no-shell --reservation=g2018030_X
 ```
+where X should be 1 for day one, 2 for day and 3 for day 3. This gives you access for four hours, so you will repeat this in the afternoon.
+
 
 Check which node you were assigned
 ```bash
