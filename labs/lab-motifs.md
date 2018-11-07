@@ -5,7 +5,7 @@ title:  'Motif finding'
 
 # Motif finding exercise
 
-In this exercise we will bla bla bla..
+In this exercise we will try a few *de-novo* motif finding programs on data sets from human and mouse. We will also compare the motifs we find to a database of known motifs.
 
 
 ## 0. Set up
