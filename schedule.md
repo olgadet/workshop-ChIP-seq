@@ -39,7 +39,7 @@ Room: Fire, Gamma 2
 - [differential binding](lectures/slides-db-func.pdf) (Olga)
 - [functional annotations](lectures/slides-db-func.pdf) (Olga)
 - [motifs](lectures/slides-motif-finding.pdf) (Jakub)
-- [broad peaks](lectures/slides-broad-peaks.pdf) (Agata)
+- [broad peaks](lectures/slides-broadpeaks.pdf) (Agata)
 
 **10.30 - 12.00** [Practicals: downstream analysis](index) (Agata, Jakub, Olga, John/Diana)
 
