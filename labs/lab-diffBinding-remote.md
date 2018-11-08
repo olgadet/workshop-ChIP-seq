@@ -197,9 +197,8 @@ load("diffBind.RData")
 
 ### Running `ChIPpeakAnno`  <a name="FA_run">
 
-Like with DiffBind package there is a nice [ChIPpeakAnno tutorial](http://bioconductor.org/packages/release/bioc/vignettes/ChIPpeakAnno/inst/doc/pipeline.html#annotate-peaks) that you can view along this exercise to read more about the various steps.
+## Like with DiffBind package there is a nice [ChIPpeakAnno tutorial (http://bioconductor.org/packages/release/bioc/vignettes/ChIPpeakAnno/inst/doc/pipeline.html#annotate-peaks) that you can view along this exercise to read more about the various steps.
 
-```bash
 
 # Loading DiffBind library
 # we will need it to extract interesting peaks for down-stream analysis
