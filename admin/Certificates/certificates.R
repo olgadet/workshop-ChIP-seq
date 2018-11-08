@@ -20,7 +20,7 @@ for (st in studentsID){
 
 for (st in studentsID){
   print(st)
-  tools::texi2pdf(paste0("/Users/olga/Desktop/ChIP-seq/admin/Certificates/Out/", paste0('diploma_', st, '.tex')),
+  tools::texi2pdf(paste0("/Users/olga/Desktop/ChIP-seq/workshop-ChIP-seq/admin/Certificates/", paste0('diploma_', st, '.tex')),
                   clean = TRUE, quiet = TRUE)
 }
 
