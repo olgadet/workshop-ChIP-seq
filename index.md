@@ -41,7 +41,7 @@ Alternative Files Locations
 
 * [Public resources](labs/lab-public-resources) (Finding data in public resources) [local]
 
-* [Exo-spike](labs/lab-exospike) (Scaling normalisation for ChIP-seq with exogenous chromatin spike) [local]
+* [Exospike](labs/lab-exospike) (Scaling normalisation for ChIP-seq with exogenous chromatin spike) [local]
 
 
 -------
