@@ -64,7 +64,7 @@ Room: Fire, Gamma 2
 **10.00 - 10.30** Discussions: downstream analysis
 
 **10.30 - 11.00** Introduction to practicals III
-- exo-spike (Agata)
+- [exo-spike](lectures/slides-exospike.pdf) (Agata)
 - [public data resources](lectures/slides-public-resources.pdf) (Jakub)
 
 **11.00 - 12.00** [Practicals: downstream analysis](index) (Agata, Jakub, Olga, John/Diana)
