@@ -86,6 +86,17 @@ All files necessary to execute the code in `R` can be copied from Rackham from:
 
 After copying the files please decompress the archive and note the path to folder `/chip_exo_spike` on your local system.
 
+## Fingerprint plots
+
+all reads mapped to `hg38` (i.e. not subset)
+
+<img src="../figures/lab-exospike/exo-hg38-fingerprint.png" alt="" style="width: 400px;"/><br>
+
+all reads mapped to `dm6` (i.e. not subset)
+
+<img src="../figures/lab-exospike/exo-dm6-fingerprint.png" alt="" style="width: 400px;"/><br>
+
+
 
 ## Disclaimer
 
