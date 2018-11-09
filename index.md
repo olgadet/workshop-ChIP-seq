@@ -41,6 +41,14 @@ Alternative Files Locations
 
 * [Public resources](labs/lab-public-resources) (Finding data in public resources) [local]
 
+* [Exo-spike](labs/lab-exospike) (Scaling normalisation for ChIP-seq with exogenous chromatin spike) [local]
+
+
+-------
+#### Nature submission
+
+[https://goo.gl/forms/DV48vrfqoUDBH2gq2](https://goo.gl/forms/DV48vrfqoUDBH2gq2)
+
 --------
 
 ### Address and travel suggestions
