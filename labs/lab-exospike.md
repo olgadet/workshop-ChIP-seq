@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  'Signal visualisation with deepTools'
+title:  'ChIP-seq with exogenous chromatin spike'
 ---
 
 # ChIP-seq with exogenous chromatin spike
