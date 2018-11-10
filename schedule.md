@@ -59,7 +59,7 @@ Parallel session
 ### Friday 2018-11-09
 Room: Fire, Gamma 2
 
-**09.00 - 10.00** [Introduction to SciLifeLab NGI ChIP-seq pipeline](lectures/slides-NGI-2017) (Phil Ewels)
+**09.00 - 10.00** [Introduction to SciLifeLab NGI ChIP-seq pipeline](lectures/slides-NGI-2018.pdf) (Phil Ewels)
 
 **10.00 - 10.30** Discussions: downstream analysis
 
